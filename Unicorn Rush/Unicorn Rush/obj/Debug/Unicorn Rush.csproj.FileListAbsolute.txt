@@ -1,1 +1,10 @@
 C:\Users\Default.DESKTOP-9C3HOA4\Desktop\Unicorn Rush\Unicorn Rush\Unicorn Rush\bin\Debug\Unicorn Rush.exe.config
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\bin\Debug\Unicorn Rush.exe.config
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\bin\Debug\Unicorn Rush.exe
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\bin\Debug\Unicorn Rush.pdb
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn Rush.csprojResolveAssemblyReference.cache
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn_Rush.Form1.resources
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn_Rush.Properties.Resources.resources
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn Rush.csproj.GenerateResource.Cache
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn Rush.exe
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn Rush.pdb
