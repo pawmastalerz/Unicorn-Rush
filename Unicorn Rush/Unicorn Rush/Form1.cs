@@ -16,5 +16,16 @@ namespace Unicorn_Rush
         {
             InitializeComponent();
         }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Patatajajo xD", "No, super.");
+            buttonPodpiszZaklad.Enabled = false;
+        }
+
+        private void buttonPodpiszZaklad_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Zakład przyjęty.", "Zawarto zakład!");
+        }
     }
 }
