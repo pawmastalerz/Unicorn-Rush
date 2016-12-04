@@ -125,27 +125,27 @@
             this.labelZbychuZaklad.AutoSize = true;
             this.labelZbychuZaklad.Location = new System.Drawing.Point(20, 30);
             this.labelZbychuZaklad.Name = "labelZbychuZaklad";
-            this.labelZbychuZaklad.Size = new System.Drawing.Size(81, 13);
+            this.labelZbychuZaklad.Size = new System.Drawing.Size(144, 13);
             this.labelZbychuZaklad.TabIndex = 8;
-            this.labelZbychuZaklad.Text = "Zakład Zbycha";
+            this.labelZbychuZaklad.Text = "Czekam na zakład Zbycha...";
             // 
             // labelHelgaZaklad
             // 
             this.labelHelgaZaklad.AutoSize = true;
             this.labelHelgaZaklad.Location = new System.Drawing.Point(20, 70);
             this.labelHelgaZaklad.Name = "labelHelgaZaklad";
-            this.labelHelgaZaklad.Size = new System.Drawing.Size(69, 13);
+            this.labelHelgaZaklad.Size = new System.Drawing.Size(132, 13);
             this.labelHelgaZaklad.TabIndex = 9;
-            this.labelHelgaZaklad.Text = "Zakład Helgi";
+            this.labelHelgaZaklad.Text = "Czekam na zakład Helgi...";
             // 
             // labelEustachyZaklad
             // 
             this.labelEustachyZaklad.AutoSize = true;
             this.labelEustachyZaklad.Location = new System.Drawing.Point(20, 110);
             this.labelEustachyZaklad.Name = "labelEustachyZaklad";
-            this.labelEustachyZaklad.Size = new System.Drawing.Size(100, 13);
+            this.labelEustachyZaklad.Size = new System.Drawing.Size(163, 13);
             this.labelEustachyZaklad.TabIndex = 10;
-            this.labelEustachyZaklad.Text = "Zaklad Eustachego";
+            this.labelEustachyZaklad.Text = "Czekam na zaklad Eustachego...";
             // 
             // buttonPodpiszZaklad
             // 
@@ -180,6 +180,7 @@
             this.comboBoxGracz.Name = "comboBoxGracz";
             this.comboBoxGracz.Size = new System.Drawing.Size(121, 21);
             this.comboBoxGracz.TabIndex = 13;
+            this.comboBoxGracz.SelectedIndexChanged += new System.EventHandler(this.comboBoxGracz_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -244,6 +245,11 @@
             this.numericUpDownJednorozecNumer.Location = new System.Drawing.Point(137, 78);
             this.numericUpDownJednorozecNumer.Maximum = new decimal(new int[] {
             4,
+            0,
+            0,
+            0});
+            this.numericUpDownJednorozecNumer.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});

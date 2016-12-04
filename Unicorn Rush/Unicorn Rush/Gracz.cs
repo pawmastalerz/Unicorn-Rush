@@ -11,7 +11,7 @@ namespace Unicorn_Rush
         string imie;
         int kasa;
         int kwotaAktualnegoZakladu = 980;
-        int numerWybranegoJednorozca = 0;
+        int numerWybranegoJednorozca = 1;
 
         public Gracz(string Imie, int Kasa)
         {
@@ -22,7 +22,7 @@ namespace Unicorn_Rush
         public string ZawartyZaklad()
         {
             return (this.imie + " obstawia " + kwotaAktualnegoZakladu + " PLN na jednorożca numer "
-                + numerWybranegoJednorozca);
+                + numerWybranegoJednorozca + ".");
         }
     }
 }
