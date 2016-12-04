@@ -40,7 +40,7 @@
             this.labelEustachyZaklad = new System.Windows.Forms.Label();
             this.buttonPodpiszZaklad = new System.Windows.Forms.Button();
             this.groupBoxZawarteZaklady = new System.Windows.Forms.GroupBox();
-            this.comboBoxZakladajacy = new System.Windows.Forms.ComboBox();
+            this.comboBoxGracz = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDownKwotaZakladu = new System.Windows.Forms.NumericUpDown();
@@ -143,9 +143,9 @@
             this.labelEustachyZaklad.AutoSize = true;
             this.labelEustachyZaklad.Location = new System.Drawing.Point(20, 110);
             this.labelEustachyZaklad.Name = "labelEustachyZaklad";
-            this.labelEustachyZaklad.Size = new System.Drawing.Size(240, 13);
+            this.labelEustachyZaklad.Size = new System.Drawing.Size(100, 13);
             this.labelEustachyZaklad.TabIndex = 10;
-            this.labelEustachyZaklad.Text = "Eustachy obstawia 980 zł na jednorożca numer 4";
+            this.labelEustachyZaklad.Text = "Zaklad Eustachego";
             // 
             // buttonPodpiszZaklad
             // 
@@ -169,17 +169,17 @@
             this.groupBoxZawarteZaklady.TabStop = false;
             this.groupBoxZawarteZaklady.Text = "Zawarte zakłady:";
             // 
-            // comboBoxZakladajacy
+            // comboBoxGracz
             // 
-            this.comboBoxZakladajacy.FormattingEnabled = true;
-            this.comboBoxZakladajacy.Items.AddRange(new object[] {
+            this.comboBoxGracz.FormattingEnabled = true;
+            this.comboBoxGracz.Items.AddRange(new object[] {
             "Zbychu",
             "Helga",
             "Eustachy"});
-            this.comboBoxZakladajacy.Location = new System.Drawing.Point(20, 20);
-            this.comboBoxZakladajacy.Name = "comboBoxZakladajacy";
-            this.comboBoxZakladajacy.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxZakladajacy.TabIndex = 13;
+            this.comboBoxGracz.Location = new System.Drawing.Point(20, 20);
+            this.comboBoxGracz.Name = "comboBoxGracz";
+            this.comboBoxGracz.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGracz.TabIndex = 13;
             // 
             // label1
             // 
@@ -258,7 +258,7 @@
             // 
             // groupBoxAktualnyZaklad
             // 
-            this.groupBoxAktualnyZaklad.Controls.Add(this.comboBoxZakladajacy);
+            this.groupBoxAktualnyZaklad.Controls.Add(this.comboBoxGracz);
             this.groupBoxAktualnyZaklad.Controls.Add(this.numericUpDownJednorozecNumer);
             this.groupBoxAktualnyZaklad.Controls.Add(this.label1);
             this.groupBoxAktualnyZaklad.Controls.Add(this.label7);
@@ -319,7 +319,7 @@
         private System.Windows.Forms.Label labelEustachyZaklad;
         private System.Windows.Forms.Button buttonPodpiszZaklad;
         private System.Windows.Forms.GroupBox groupBoxZawarteZaklady;
-        private System.Windows.Forms.ComboBox comboBoxZakladajacy;
+        private System.Windows.Forms.ComboBox comboBoxGracz;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDownKwotaZakladu;
