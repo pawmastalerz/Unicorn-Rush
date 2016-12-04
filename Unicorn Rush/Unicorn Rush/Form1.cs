@@ -59,29 +59,45 @@ namespace Unicorn_Rush
 
         private void buttonPodpiszZaklad_Click(object sender, EventArgs e)
         {
-            zaklady[comboBoxGracz.SelectedIndex].UstawNumerJednorozca(
-                Convert.ToInt16(numericUpDownJednorozecNumer.Value));
-            zaklady[comboBoxGracz.SelectedIndex].UstawKwoteZakladu(
-                Convert.ToInt16(numericUpDownKwotaZakladu.Value));
+            if ((comboBoxGracz.SelectedIndex == 0) && (zaklady[0].CzyZaglosowano() == true))
+            {
+                MessageBox.Show("Zbychu już obstawił!", "Niestety...");
+            }
+            else if ((comboBoxGracz.SelectedIndex == 1) && (zaklady[1].CzyZaglosowano() == true))
+            {
+                MessageBox.Show("Helga już obstawiła!", "Niestety...");
+            }
+            else if ((comboBoxGracz.SelectedIndex == 2) && (zaklady[2].CzyZaglosowano() == true))
+            {
+                MessageBox.Show("Eustachy już obstawił!", "Niestety...");
+            }
 
             if ((comboBoxGracz.SelectedIndex == 0) && (zaklady[0].CzyZaglosowano() == false))
             {
+                ustawZaklad();
                 labelZbychuZaklad.Text = zaklady[0].ZawartyZaklad();
                 zaklady[0].Zaglosowano();
             }
-
             else if ((comboBoxGracz.SelectedIndex == 1) && (zaklady[1].CzyZaglosowano() == false))
             {
+                ustawZaklad();
                 labelHelgaZaklad.Text = zaklady[1].ZawartyZaklad();
                 zaklady[1].Zaglosowano();
             }
             else if ((comboBoxGracz.SelectedIndex == 2) && (zaklady[2].CzyZaglosowano() == false))
             {
+                ustawZaklad();
                 labelEustachyZaklad.Text = zaklady[2].ZawartyZaklad();
                 zaklady[2].Zaglosowano();
             }
+        }
 
-            //MessageBox.Show(zaklady[comboBoxGracz.SelectedIndex].ZawartyZaklad(), "Zawarto zakład!");
+        private void ustawZaklad()
+        {
+            zaklady[comboBoxGracz.SelectedIndex].UstawNumerJednorozca(
+                Convert.ToInt16(numericUpDownJednorozecNumer.Value));
+            zaklady[comboBoxGracz.SelectedIndex].UstawKwoteZakladu(
+                Convert.ToInt16(numericUpDownKwotaZakladu.Value));
         }
 
         private void comboBoxGracz_SelectedIndexChanged(object sender, EventArgs e)
