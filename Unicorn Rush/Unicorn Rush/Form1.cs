@@ -17,11 +17,10 @@ namespace Unicorn_Rush
 
         Zaklad ZZbychu, ZHelga, ZEustachy;
         Zaklad[] zaklady;
-        
+
         public Form1()
         {
             InitializeComponent();
-            comboBoxGracz.SelectedIndex = 0;
 
             Zbychu = new Gracz("Zbychu", 300);
             Helga = new Gracz("Helga", 200);
@@ -34,6 +33,8 @@ namespace Unicorn_Rush
             ZEustachy = new Zaklad(Eustachy.ImieGracza(), Eustachy.KasaGracza());
 
             zaklady = new Zaklad[3] { ZZbychu, ZHelga, ZEustachy };
+
+            comboBoxGracz.SelectedIndex = 0;
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -41,18 +42,21 @@ namespace Unicorn_Rush
             buttonPodpiszZaklad.Enabled = false;
             buttonStart.Enabled = false;
             MessageBox.Show("Patatajajo xD" , "No, super.");
-
-            //labelEustachyZaklad.Text = gracze[2].ZawartyZaklad();
         }
 
         private void buttonPodpiszZaklad_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Zakład przyjęty.", "Zawarto zakład!");
+            zaklady[comboBoxGracz.SelectedIndex].UstawNumerJednorozca(
+                Convert.ToInt16(numericUpDownJednorozecNumer.Value));
+            zaklady[comboBoxGracz.SelectedIndex].UstawKwoteZakladu(
+                Convert.ToInt16(numericUpDownKwotaZakladu.Value));
+
+            MessageBox.Show(zaklady[comboBoxGracz.SelectedIndex].ZawartyZaklad(), "Zawarto zakład!");
         }
 
         private void comboBoxGracz_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label1.Text = "ma aktualnie PLN";
+            label1.Text = "ma aktualnie " + gracze[comboBoxGracz.SelectedIndex].KasaGracza() + " PLN";
         }
     }
 }

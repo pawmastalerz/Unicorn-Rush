@@ -9,8 +9,8 @@ namespace Unicorn_Rush
 {
     class Zaklad : Gracz
     {
-        int kwotaZakladu = 980;
-        int numerJednorozca = 1;
+        int kwotaZakladu = 2;
+        int numerJednorozca;
 
         public Zaklad(string Imie, int Kasa) : base(Imie, Kasa)
         {
@@ -21,6 +21,16 @@ namespace Unicorn_Rush
         {
             return (base.ImieGracza() + " obstawia " + kwotaZakladu + " PLN na jednorożca numer "
                 + numerJednorozca + ".");
+        }
+
+        public void UstawNumerJednorozca(int NumerJednorozca)
+        {
+            this.numerJednorozca = NumerJednorozca;
+        }
+
+        public void UstawKwoteZakladu(int KwotaZakladu)
+        {
+            this.kwotaZakladu = KwotaZakladu;
         }
     }
 }
