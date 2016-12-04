@@ -41,7 +41,20 @@ namespace Unicorn_Rush
         {
             buttonPodpiszZaklad.Enabled = false;
             buttonStart.Enabled = false;
+
             MessageBox.Show("Patatajajo xD" , "No, super.");
+
+            buttonPodpiszZaklad.Enabled = true;
+            buttonStart.Enabled = true;
+
+            for (int i = 0; i < zaklady.Length; i++)
+            {
+                zaklady[i].ResetujZaglosowanie();
+            }
+
+            labelZbychuZaklad.Text = "Czekam na zakład Zbycha...";
+            labelHelgaZaklad.Text = "Czekam na zakład Helgi...";
+            labelEustachyZaklad.Text = "Czekam na zaklad Eustachego...";
         }
 
         private void buttonPodpiszZaklad_Click(object sender, EventArgs e)
@@ -51,7 +64,24 @@ namespace Unicorn_Rush
             zaklady[comboBoxGracz.SelectedIndex].UstawKwoteZakladu(
                 Convert.ToInt16(numericUpDownKwotaZakladu.Value));
 
-            MessageBox.Show(zaklady[comboBoxGracz.SelectedIndex].ZawartyZaklad(), "Zawarto zakład!");
+            if ((comboBoxGracz.SelectedIndex == 0) && (zaklady[0].CzyZaglosowano() == false))
+            {
+                labelZbychuZaklad.Text = zaklady[0].ZawartyZaklad();
+                zaklady[0].Zaglosowano();
+            }
+
+            else if ((comboBoxGracz.SelectedIndex == 1) && (zaklady[1].CzyZaglosowano() == false))
+            {
+                labelHelgaZaklad.Text = zaklady[1].ZawartyZaklad();
+                zaklady[1].Zaglosowano();
+            }
+            else if ((comboBoxGracz.SelectedIndex == 2) && (zaklady[2].CzyZaglosowano() == false))
+            {
+                labelEustachyZaklad.Text = zaklady[2].ZawartyZaklad();
+                zaklady[2].Zaglosowano();
+            }
+
+            //MessageBox.Show(zaklady[comboBoxGracz.SelectedIndex].ZawartyZaklad(), "Zawarto zakład!");
         }
 
         private void comboBoxGracz_SelectedIndexChanged(object sender, EventArgs e)

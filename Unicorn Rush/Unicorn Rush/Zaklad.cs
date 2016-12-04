@@ -11,16 +11,11 @@ namespace Unicorn_Rush
     {
         int kwotaZakladu = 2;
         int numerJednorozca;
+        bool zaglosowano = false;
 
         public Zaklad(string Imie, int Kasa) : base(Imie, Kasa)
         {
 
-        }
-
-        public string ZawartyZaklad()
-        {
-            return (base.ImieGracza() + " obstawia " + kwotaZakladu + " PLN na jednorożca numer "
-                + numerJednorozca + ".");
         }
 
         public void UstawNumerJednorozca(int NumerJednorozca)
@@ -31,6 +26,27 @@ namespace Unicorn_Rush
         public void UstawKwoteZakladu(int KwotaZakladu)
         {
             this.kwotaZakladu = KwotaZakladu;
+        }
+
+        public void Zaglosowano()
+        {
+            this.zaglosowano = true;
+        }
+
+        public void ResetujZaglosowanie()
+        {
+            this.zaglosowano = false;
+        }
+
+        public bool CzyZaglosowano()
+        {
+            return this.zaglosowano;
+        }
+
+        public string ZawartyZaklad()
+        {
+            return (base.ImieGracza() + " obstawia " + kwotaZakladu + " PLN na jednorożca numer "
+                + numerJednorozca + ".");
         }
     }
 }
