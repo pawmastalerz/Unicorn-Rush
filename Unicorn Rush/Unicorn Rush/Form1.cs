@@ -12,10 +12,11 @@ namespace Unicorn_Rush
 {
     public partial class Form1 : Form
     {
-        Gracz Zbychu; 
-        Gracz Helga;
-        Gracz Eustachy;
+        Gracz Zbychu, Helga, Eustachy;
         Gracz[] gracze;
+
+        Zaklad ZZbychu, ZHelga, ZEustachy;
+        Zaklad[] zaklady;
         
         public Form1()
         {
@@ -27,6 +28,12 @@ namespace Unicorn_Rush
             Eustachy = new Gracz("Eustachy", 100);
 
             gracze = new Gracz[3] { Zbychu, Helga, Eustachy };
+
+            ZZbychu = new Zaklad(Zbychu.ImieGracza(), Zbychu.KasaGracza());
+            ZHelga = new Zaklad(Helga.ImieGracza(), Helga.KasaGracza());
+            ZEustachy = new Zaklad(Eustachy.ImieGracza(), Eustachy.KasaGracza());
+
+            zaklady = new Zaklad[3] { ZZbychu, ZHelga, ZEustachy };
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -35,9 +42,7 @@ namespace Unicorn_Rush
             buttonStart.Enabled = false;
             MessageBox.Show("Patatajajo xD" , "No, super.");
 
-            labelZbychuZaklad.Text = gracze[0].ZawartyZaklad();
-            labelHelgaZaklad.Text = gracze[1].ZawartyZaklad();
-            labelEustachyZaklad.Text = gracze[2].ZawartyZaklad();
+            //labelEustachyZaklad.Text = gracze[2].ZawartyZaklad();
         }
 
         private void buttonPodpiszZaklad_Click(object sender, EventArgs e)
