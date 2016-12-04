@@ -52,7 +52,7 @@ namespace Unicorn_Rush
 
         private void comboBoxGracz_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            label1.Text = "ma aktualnie PLN";
         }
     }
 }
