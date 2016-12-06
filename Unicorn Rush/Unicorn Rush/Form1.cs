@@ -18,31 +18,53 @@ namespace Unicorn_Rush
         Zaklad ZZbychu, ZHelga, ZEustachy;
         Zaklad[] zaklady;
 
+        Jednorozec J1, J2, J3, J4;
+        Jednorozec[] jednorozce;
+
         public Form1()
         {
             InitializeComponent();
 
+            Random rnd = new Random();
+
             Zbychu = new Gracz("Zbychu", 300);
             Helga = new Gracz("Helga", 200);
             Eustachy = new Gracz("Eustachy", 100);
-
             gracze = new Gracz[3] { Zbychu, Helga, Eustachy };
 
             ZZbychu = new Zaklad(Zbychu.ImieGracza(), Zbychu.KasaGracza());
             ZHelga = new Zaklad(Helga.ImieGracza(), Helga.KasaGracza());
             ZEustachy = new Zaklad(Eustachy.ImieGracza(), Eustachy.KasaGracza());
-
             zaklady = new Zaklad[3] { ZZbychu, ZHelga, ZEustachy };
 
+            J1 = new Jednorozec(17, 16);
+            J2 = new Jednorozec(17, 116);
+            J3 = new Jednorozec(17, 216);
+            J4 = new Jednorozec(17, 316);
+            jednorozce = new Jednorozec[4] { J1, J2, J3, J4 };
+
             comboBoxGracz.SelectedIndex = 0;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int x = pictureBoxJednorozec1.Location.X;
+            int y = pictureBoxJednorozec1.Location.Y;
+
+            pictureBoxJednorozec1.Location = new Point(x + 15, y);
+
+            if (x >= 400)
+            {
+                timer1.Stop();
+            }
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
             buttonPodpiszZaklad.Enabled = false;
             buttonStart.Enabled = false;
-
-            MessageBox.Show("Patatajajo xD" , "No, super.");
+            timer1.Enabled = true;
+            
 
             buttonPodpiszZaklad.Enabled = true;
             buttonStart.Enabled = true;

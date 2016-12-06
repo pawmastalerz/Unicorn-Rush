@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxJednorozec1 = new System.Windows.Forms.PictureBox();
@@ -48,6 +49,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDownJednorozecNumer = new System.Windows.Forms.NumericUpDown();
             this.groupBoxAktualnyZaklad = new System.Windows.Forms.GroupBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec2)).BeginInit();
@@ -282,6 +284,10 @@
             this.groupBoxAktualnyZaklad.TabStop = false;
             this.groupBoxAktualnyZaklad.Text = "Aktualny zakład";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,6 +343,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numericUpDownJednorozecNumer;
         private System.Windows.Forms.GroupBox groupBoxAktualnyZaklad;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
