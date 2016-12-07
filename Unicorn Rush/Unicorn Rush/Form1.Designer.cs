@@ -47,16 +47,17 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBoxJednorozec1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxJednorozec4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxJednorozec3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxJednorozec311 = new System.Windows.Forms.PictureBox();
             this.pictureBoxJednorozec2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxJednorozec3 = new System.Windows.Forms.Panel();
             this.groupBoxZawarteZaklady.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKwotaZakladu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJednorozecNumer)).BeginInit();
             this.groupBoxAktualnyZaklad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec311)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -238,8 +239,8 @@
             // pictureBoxJednorozec1
             // 
             this.pictureBoxJednorozec1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxJednorozec1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxJednorozec1.BackgroundImage")));
             this.pictureBoxJednorozec1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxJednorozec1.Image = global::Unicorn_Rush.Properties.Resources.Jednorozec;
             this.pictureBoxJednorozec1.Location = new System.Drawing.Point(5, 5);
             this.pictureBoxJednorozec1.Name = "pictureBoxJednorozec1";
             this.pictureBoxJednorozec1.Size = new System.Drawing.Size(150, 90);
@@ -257,16 +258,15 @@
             this.pictureBoxJednorozec4.TabIndex = 6;
             this.pictureBoxJednorozec4.TabStop = false;
             // 
-            // pictureBoxJednorozec3
+            // pictureBoxJednorozec311
             // 
-            this.pictureBoxJednorozec3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxJednorozec3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxJednorozec3.BackgroundImage")));
-            this.pictureBoxJednorozec3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxJednorozec3.Location = new System.Drawing.Point(5, 205);
-            this.pictureBoxJednorozec3.Name = "pictureBoxJednorozec3";
-            this.pictureBoxJednorozec3.Size = new System.Drawing.Size(150, 90);
-            this.pictureBoxJednorozec3.TabIndex = 5;
-            this.pictureBoxJednorozec3.TabStop = false;
+            this.pictureBoxJednorozec311.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxJednorozec311.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxJednorozec311.Location = new System.Drawing.Point(5, 205);
+            this.pictureBoxJednorozec311.Name = "pictureBoxJednorozec311";
+            this.pictureBoxJednorozec311.Size = new System.Drawing.Size(150, 90);
+            this.pictureBoxJednorozec311.TabIndex = 5;
+            this.pictureBoxJednorozec311.TabStop = false;
             // 
             // pictureBoxJednorozec2
             // 
@@ -281,16 +281,27 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::Unicorn_Rush.Properties.Resources.Tor;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.pictureBoxJednorozec3);
             this.panel1.Controls.Add(this.pictureBoxJednorozec1);
             this.panel1.Controls.Add(this.pictureBoxJednorozec2);
-            this.panel1.Controls.Add(this.pictureBoxJednorozec3);
+            this.panel1.Controls.Add(this.pictureBoxJednorozec311);
             this.panel1.Controls.Add(this.pictureBoxJednorozec4);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 600);
+            this.panel1.Size = new System.Drawing.Size(800, 400);
             this.panel1.TabIndex = 21;
+            // 
+            // pictureBoxJednorozec3
+            // 
+            this.pictureBoxJednorozec3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxJednorozec3.BackgroundImage = global::Unicorn_Rush.Properties.Resources.Jednorozec;
+            this.pictureBoxJednorozec3.Location = new System.Drawing.Point(5, 205);
+            this.pictureBoxJednorozec3.Name = "pictureBoxJednorozec3";
+            this.pictureBoxJednorozec3.Size = new System.Drawing.Size(164, 90);
+            this.pictureBoxJednorozec3.TabIndex = 7;
             // 
             // Form1
             // 
@@ -314,7 +325,7 @@
             this.groupBoxAktualnyZaklad.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec311)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -325,7 +336,7 @@
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.PictureBox pictureBoxJednorozec1;
         private System.Windows.Forms.PictureBox pictureBoxJednorozec2;
-        private System.Windows.Forms.PictureBox pictureBoxJednorozec3;
+        private System.Windows.Forms.PictureBox pictureBoxJednorozec311;
         private System.Windows.Forms.PictureBox pictureBoxJednorozec4;
         private System.Windows.Forms.Label labelZbychuZaklad;
         private System.Windows.Forms.Label labelHelgaZaklad;
@@ -342,6 +353,7 @@
         private System.Windows.Forms.GroupBox groupBoxAktualnyZaklad;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pictureBoxJednorozec3;
     }
 }
 

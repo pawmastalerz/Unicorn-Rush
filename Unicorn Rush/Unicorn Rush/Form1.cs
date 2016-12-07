@@ -35,10 +35,10 @@ namespace Unicorn_Rush
             ZEustachy = new Zaklad(Eustachy.ImieGracza(), Eustachy.KasaGracza());
             zaklady = new Zaklad[3] { ZZbychu, ZHelga, ZEustachy };
 
-            J1 = new Jednorozec(16);
-            J2 = new Jednorozec(116);
-            J3 = new Jednorozec(216);
-            J4 = new Jednorozec(316);
+            J1 = new Jednorozec(5);
+            J2 = new Jednorozec(105);
+            J3 = new Jednorozec(205);
+            J4 = new Jednorozec(305);
             jednorozce = new Jednorozec[4] { J1, J2, J3, J4 };
 
             comboBoxGracz.SelectedIndex = 0;
@@ -47,16 +47,16 @@ namespace Unicorn_Rush
         private void timer1_Tick(object sender, EventArgs e)
         {
             J1.UstawX(pictureBoxJednorozec1.Location.X);
-            pictureBoxJednorozec1.Location = new Point(J1.PodajX() + J1.PodajPredkosc(), 16);
+            pictureBoxJednorozec1.Location = new Point(J1.PodajX() + J1.PodajPredkosc(), 5);
 
-            J2.UstawX(pictureBoxJednorozec1.Location.X);
-            pictureBoxJednorozec2.Location = new Point(J2.PodajX() + J2.PodajPredkosc(), 116);
+            J2.UstawX(pictureBoxJednorozec2.Location.X);
+            pictureBoxJednorozec2.Location = new Point(J2.PodajX() + J2.PodajPredkosc(), 105);
 
-            J3.UstawX(pictureBoxJednorozec1.Location.X);
-            pictureBoxJednorozec3.Location = new Point(J3.PodajX() + J3.PodajPredkosc(), 216);
+            J3.UstawX(pictureBoxJednorozec3.Location.X);
+            pictureBoxJednorozec3.Location = new Point(J3.PodajX() + J3.PodajPredkosc(), 205);
 
-            J4.UstawX(pictureBoxJednorozec1.Location.X);
-            pictureBoxJednorozec4.Location = new Point(J4.PodajX() + J4.PodajPredkosc(), 316);
+            J4.UstawX(pictureBoxJednorozec4.Location.X);
+            pictureBoxJednorozec4.Location = new Point(J4.PodajX() + J4.PodajPredkosc(), 305);
 
             if (J1.PodajX() >= 469 || J2.PodajX() >= 469 || J3.PodajX() >= 469 || J4.PodajX() >= 469)
             {
@@ -64,13 +64,13 @@ namespace Unicorn_Rush
                 MessageBox.Show("Cośtam wygrało.");
                 for (int i = 0; i < jednorozce.Length; i++)
                 {
-                    jednorozce[i].UstawX(17);
+                    jednorozce[i].UstawX(5);
                 }
 
-                pictureBoxJednorozec1.Location = new Point(J1.PodajX(), 16);
-                pictureBoxJednorozec2.Location = new Point(J2.PodajX(), 116);
-                pictureBoxJednorozec3.Location = new Point(J3.PodajX(), 216);
-                pictureBoxJednorozec4.Location = new Point(J4.PodajX(), 316);
+                pictureBoxJednorozec1.Location = new Point(J1.PodajX(), 5);
+                pictureBoxJednorozec2.Location = new Point(J2.PodajX(), 105);
+                pictureBoxJednorozec3.Location = new Point(J3.PodajX(), 205);
+                pictureBoxJednorozec4.Location = new Point(J4.PodajX(), 305);
 
                 buttonPodpiszZaklad.Enabled = true;
                 buttonStart.Enabled = true;
