@@ -30,12 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxJednorozec1 = new System.Windows.Forms.PictureBox();
             this.buttonStart = new System.Windows.Forms.Button();
-            this.pictureBoxJednorozec2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxJednorozec3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxJednorozec4 = new System.Windows.Forms.PictureBox();
             this.labelZbychuZaklad = new System.Windows.Forms.Label();
             this.labelHelgaZaklad = new System.Windows.Forms.Label();
             this.labelEustachyZaklad = new System.Windows.Forms.Label();
@@ -50,37 +45,21 @@
             this.numericUpDownJednorozecNumer = new System.Windows.Forms.NumericUpDown();
             this.groupBoxAktualnyZaklad = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec4)).BeginInit();
+            this.pictureBoxJednorozec1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxJednorozec4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxJednorozec3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxJednorozec2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxZawarteZaklady.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKwotaZakladu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJednorozecNumer)).BeginInit();
             this.groupBoxAktualnyZaklad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 400);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBoxJednorozec1
-            // 
-            this.pictureBoxJednorozec1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxJednorozec1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxJednorozec1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxJednorozec1.Image")));
-            this.pictureBoxJednorozec1.Location = new System.Drawing.Point(17, 16);
-            this.pictureBoxJednorozec1.Name = "pictureBoxJednorozec1";
-            this.pictureBoxJednorozec1.Size = new System.Drawing.Size(150, 90);
-            this.pictureBoxJednorozec1.TabIndex = 3;
-            this.pictureBoxJednorozec1.TabStop = false;
             // 
             // buttonStart
             // 
@@ -92,39 +71,6 @@
             this.buttonStart.Text = "Start!";
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
-            // 
-            // pictureBoxJednorozec2
-            // 
-            this.pictureBoxJednorozec2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxJednorozec2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxJednorozec2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxJednorozec2.Image")));
-            this.pictureBoxJednorozec2.Location = new System.Drawing.Point(17, 116);
-            this.pictureBoxJednorozec2.Name = "pictureBoxJednorozec2";
-            this.pictureBoxJednorozec2.Size = new System.Drawing.Size(150, 90);
-            this.pictureBoxJednorozec2.TabIndex = 4;
-            this.pictureBoxJednorozec2.TabStop = false;
-            // 
-            // pictureBoxJednorozec3
-            // 
-            this.pictureBoxJednorozec3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxJednorozec3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxJednorozec3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxJednorozec3.Image")));
-            this.pictureBoxJednorozec3.Location = new System.Drawing.Point(17, 216);
-            this.pictureBoxJednorozec3.Name = "pictureBoxJednorozec3";
-            this.pictureBoxJednorozec3.Size = new System.Drawing.Size(150, 90);
-            this.pictureBoxJednorozec3.TabIndex = 5;
-            this.pictureBoxJednorozec3.TabStop = false;
-            // 
-            // pictureBoxJednorozec4
-            // 
-            this.pictureBoxJednorozec4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxJednorozec4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxJednorozec4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxJednorozec4.Image")));
-            this.pictureBoxJednorozec4.Location = new System.Drawing.Point(17, 316);
-            this.pictureBoxJednorozec4.Name = "pictureBoxJednorozec4";
-            this.pictureBoxJednorozec4.Size = new System.Drawing.Size(150, 90);
-            this.pictureBoxJednorozec4.TabIndex = 6;
-            this.pictureBoxJednorozec4.TabStop = false;
             // 
             // labelZbychuZaklad
             // 
@@ -286,7 +232,65 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 30;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBoxJednorozec1
+            // 
+            this.pictureBoxJednorozec1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxJednorozec1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxJednorozec1.BackgroundImage")));
+            this.pictureBoxJednorozec1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxJednorozec1.Location = new System.Drawing.Point(5, 5);
+            this.pictureBoxJednorozec1.Name = "pictureBoxJednorozec1";
+            this.pictureBoxJednorozec1.Size = new System.Drawing.Size(150, 90);
+            this.pictureBoxJednorozec1.TabIndex = 3;
+            this.pictureBoxJednorozec1.TabStop = false;
+            // 
+            // pictureBoxJednorozec4
+            // 
+            this.pictureBoxJednorozec4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxJednorozec4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxJednorozec4.BackgroundImage")));
+            this.pictureBoxJednorozec4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxJednorozec4.Location = new System.Drawing.Point(5, 305);
+            this.pictureBoxJednorozec4.Name = "pictureBoxJednorozec4";
+            this.pictureBoxJednorozec4.Size = new System.Drawing.Size(150, 90);
+            this.pictureBoxJednorozec4.TabIndex = 6;
+            this.pictureBoxJednorozec4.TabStop = false;
+            // 
+            // pictureBoxJednorozec3
+            // 
+            this.pictureBoxJednorozec3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxJednorozec3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxJednorozec3.BackgroundImage")));
+            this.pictureBoxJednorozec3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxJednorozec3.Location = new System.Drawing.Point(5, 205);
+            this.pictureBoxJednorozec3.Name = "pictureBoxJednorozec3";
+            this.pictureBoxJednorozec3.Size = new System.Drawing.Size(150, 90);
+            this.pictureBoxJednorozec3.TabIndex = 5;
+            this.pictureBoxJednorozec3.TabStop = false;
+            // 
+            // pictureBoxJednorozec2
+            // 
+            this.pictureBoxJednorozec2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxJednorozec2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxJednorozec2.BackgroundImage")));
+            this.pictureBoxJednorozec2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxJednorozec2.Location = new System.Drawing.Point(5, 105);
+            this.pictureBoxJednorozec2.Name = "pictureBoxJednorozec2";
+            this.pictureBoxJednorozec2.Size = new System.Drawing.Size(150, 90);
+            this.pictureBoxJednorozec2.TabIndex = 4;
+            this.pictureBoxJednorozec2.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Unicorn_Rush.Properties.Resources.Tor;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.pictureBoxJednorozec1);
+            this.panel1.Controls.Add(this.pictureBoxJednorozec2);
+            this.panel1.Controls.Add(this.pictureBoxJednorozec3);
+            this.panel1.Controls.Add(this.pictureBoxJednorozec4);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 600);
+            this.panel1.TabIndex = 21;
             // 
             // Form1
             // 
@@ -296,35 +300,28 @@
             this.Controls.Add(this.groupBoxAktualnyZaklad);
             this.Controls.Add(this.groupBoxZawarteZaklady);
             this.Controls.Add(this.buttonPodpiszZaklad);
-            this.Controls.Add(this.pictureBoxJednorozec4);
-            this.Controls.Add(this.pictureBoxJednorozec3);
-            this.Controls.Add(this.pictureBoxJednorozec2);
-            this.Controls.Add(this.pictureBoxJednorozec1);
             this.Controls.Add(this.buttonStart);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Unicorn Rush";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec4)).EndInit();
             this.groupBoxZawarteZaklady.ResumeLayout(false);
             this.groupBoxZawarteZaklady.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKwotaZakladu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJednorozecNumer)).EndInit();
             this.groupBoxAktualnyZaklad.ResumeLayout(false);
             this.groupBoxAktualnyZaklad.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJednorozec2)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.PictureBox pictureBoxJednorozec1;
         private System.Windows.Forms.PictureBox pictureBoxJednorozec2;
@@ -344,6 +341,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDownJednorozecNumer;
         private System.Windows.Forms.GroupBox groupBoxAktualnyZaklad;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

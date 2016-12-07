@@ -9,8 +9,8 @@ namespace Unicorn_Rush
 {
     class Zaklad : Gracz
     {
-        int kwotaZakladu = 2;
-        int numerJednorozca;
+        int kwotaZakladu = 0;
+        int numerJednorozca = 0;
         bool zaglosowano = false;
 
         public Zaklad(string Imie, int Kasa) : base(Imie, Kasa)
@@ -36,6 +36,8 @@ namespace Unicorn_Rush
         public void ResetujZaglosowanie()
         {
             this.zaglosowano = false;
+            this.kwotaZakladu = 0;
+            this.numerJednorozca = 0;
         }
 
         public bool CzyZaglosowano()

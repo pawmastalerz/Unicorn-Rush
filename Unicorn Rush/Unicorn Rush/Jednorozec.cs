@@ -8,21 +8,35 @@ namespace Unicorn_Rush
 {
     class Jednorozec
     {
-        Random rnd = new Random();
+        static Random rnd = new Random();
 
         int predkosc = 0;
-        int przebytaOdleglosc = 0;
-        int x, y;
+        int x;
 
-        public Jednorozec(int X, int Y)
+        public Jednorozec(int X)
         {
             this.x = X;
-            this.y = Y;
         }
 
         public void WylosujPredkosc()
         {
-            this.predkosc = rnd.Next(5, 8);
+            this.predkosc = rnd.Next( 3, 15 );
+        }
+        
+        public int PodajPredkosc()
+        {
+            WylosujPredkosc();
+            return this.predkosc;
+        }
+
+        public int PodajX()
+        {
+            return this.x;
+        }
+        
+        public void UstawX(int X)
+        {
+            this.x = X;
         }
     }
 }
