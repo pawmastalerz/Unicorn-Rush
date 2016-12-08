@@ -36,13 +36,16 @@ namespace Unicorn_Rush
             ZEustachy = new Zaklad(Eustachy.ImieGracza(), Eustachy.KasaGracza());
             zaklady = new Zaklad[3] { ZZbychu, ZHelga, ZEustachy };
 
-            J1 = new Jednorozec(5);
-            J2 = new Jednorozec(105);
-            J3 = new Jednorozec(205);
-            J4 = new Jednorozec(305);
+            J1 = new Jednorozec(5, 1);
+            J2 = new Jednorozec(105, 2);
+            J3 = new Jednorozec(205, 3);
+            J4 = new Jednorozec(305, 4);
             jednorozce = new Jednorozec[4] { J1, J2, J3, J4 };
 
+            int Pula = 0;
+
             comboBoxGracz.SelectedIndex = 0;
+            labelPula.Text = Convert.ToString(Pula);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -59,10 +62,28 @@ namespace Unicorn_Rush
             J4.UstawX(pictureBoxJednorozec4.Location.X);
             pictureBoxJednorozec4.Location = new Point(J4.PodajX() + J4.PodajPredkosc(), 305);
 
-            if (J1.PodajX() >= 615 | J2.PodajX() >= 615 | J3.PodajX() >= 615 | J4.PodajX() >= 615)
+            if (J1.CzyJuzWygral() == true)
             {
                 timer1.Stop();
-                MessageBox.Show("Cośtam wygrało.");
+                J1.Wygrana();
+                resetForm();
+            }
+            else if (J2.CzyJuzWygral() == true)
+            {
+                timer1.Stop();
+                J2.Wygrana();
+                resetForm();
+            }
+            else if (J3.CzyJuzWygral() == true)
+            {
+                timer1.Stop();
+                J3.Wygrana();
+                resetForm();
+            }
+            else if (J4.CzyJuzWygral() == true)
+            {
+                timer1.Stop();
+                J4.Wygrana();
                 resetForm();
             }
         }
@@ -81,13 +102,6 @@ namespace Unicorn_Rush
 
             buttonPodpiszZaklad.Enabled = true;
             buttonStart.Enabled = true;
-        }
-
-        private void buttonStart_Click(object sender, EventArgs e)
-        {
-            buttonPodpiszZaklad.Enabled = false;
-            buttonStart.Enabled = false;
-            timer1.Enabled = true;
 
             for (int i = 0; i < zaklady.Length; i++)
             {
@@ -97,6 +111,13 @@ namespace Unicorn_Rush
             labelZbychuZaklad.Text = "Czekam na zakład Zbycha...";
             labelHelgaZaklad.Text = "Czekam na zakład Helgi...";
             labelEustachyZaklad.Text = "Czekam na zaklad Eustachego...";
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            buttonPodpiszZaklad.Enabled = false;
+            buttonStart.Enabled = false;
+            timer1.Enabled = true;
         }
 
         private void buttonPodpiszZaklad_Click(object sender, EventArgs e)

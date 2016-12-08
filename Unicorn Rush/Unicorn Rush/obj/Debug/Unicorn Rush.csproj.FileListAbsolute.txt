@@ -8,3 +8,7 @@ C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug
 C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn Rush.csproj.GenerateResource.Cache
 C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn Rush.exe
 C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn Rush.pdb
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\bin\Debug\Unicorn Rush.exe.manifest
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\bin\Debug\Unicorn Rush.application
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn Rush.exe.manifest
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn Rush.application

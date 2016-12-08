@@ -35,6 +35,7 @@
             this.labelEustachyZaklad = new System.Windows.Forms.Label();
             this.buttonPodpiszZaklad = new System.Windows.Forms.Button();
             this.groupBoxZawarteZaklady = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.comboBoxGracz = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,6 +51,8 @@
             this.pictureBoxJednorozec2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxJednorozec311 = new System.Windows.Forms.PictureBox();
             this.pictureBoxJednorozec4 = new System.Windows.Forms.PictureBox();
+            this.labelPula = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBoxZawarteZaklady.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKwotaZakladu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJednorozecNumer)).BeginInit();
@@ -76,7 +79,7 @@
             // labelZbychuZaklad
             // 
             this.labelZbychuZaklad.AutoSize = true;
-            this.labelZbychuZaklad.Location = new System.Drawing.Point(20, 30);
+            this.labelZbychuZaklad.Location = new System.Drawing.Point(20, 25);
             this.labelZbychuZaklad.Name = "labelZbychuZaklad";
             this.labelZbychuZaklad.Size = new System.Drawing.Size(144, 13);
             this.labelZbychuZaklad.TabIndex = 8;
@@ -85,7 +88,7 @@
             // labelHelgaZaklad
             // 
             this.labelHelgaZaklad.AutoSize = true;
-            this.labelHelgaZaklad.Location = new System.Drawing.Point(20, 70);
+            this.labelHelgaZaklad.Location = new System.Drawing.Point(20, 55);
             this.labelHelgaZaklad.Name = "labelHelgaZaklad";
             this.labelHelgaZaklad.Size = new System.Drawing.Size(132, 13);
             this.labelHelgaZaklad.TabIndex = 9;
@@ -94,7 +97,7 @@
             // labelEustachyZaklad
             // 
             this.labelEustachyZaklad.AutoSize = true;
-            this.labelEustachyZaklad.Location = new System.Drawing.Point(20, 110);
+            this.labelEustachyZaklad.Location = new System.Drawing.Point(20, 85);
             this.labelEustachyZaklad.Name = "labelEustachyZaklad";
             this.labelEustachyZaklad.Size = new System.Drawing.Size(163, 13);
             this.labelEustachyZaklad.TabIndex = 10;
@@ -112,6 +115,9 @@
             // 
             // groupBoxZawarteZaklady
             // 
+            this.groupBoxZawarteZaklady.Controls.Add(this.label3);
+            this.groupBoxZawarteZaklady.Controls.Add(this.labelPula);
+            this.groupBoxZawarteZaklady.Controls.Add(this.label2);
             this.groupBoxZawarteZaklady.Controls.Add(this.labelZbychuZaklad);
             this.groupBoxZawarteZaklady.Controls.Add(this.labelHelgaZaklad);
             this.groupBoxZawarteZaklady.Controls.Add(this.labelEustachyZaklad);
@@ -121,6 +127,15 @@
             this.groupBoxZawarteZaklady.TabIndex = 12;
             this.groupBoxZawarteZaklady.TabStop = false;
             this.groupBoxZawarteZaklady.Text = "Zawarte zakłady:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "W puli aktualnie:";
             // 
             // comboBoxGracz
             // 
@@ -305,6 +320,24 @@
             this.pictureBoxJednorozec4.TabIndex = 6;
             this.pictureBoxJednorozec4.TabStop = false;
             // 
+            // labelPula
+            // 
+            this.labelPula.AutoSize = true;
+            this.labelPula.Location = new System.Drawing.Point(112, 115);
+            this.labelPula.Name = "labelPula";
+            this.labelPula.Size = new System.Drawing.Size(35, 13);
+            this.labelPula.TabIndex = 12;
+            this.labelPula.Text = "XXXX";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(153, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "PLN";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,6 +390,9 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBoxJednorozec3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelPula;
     }
 }
 

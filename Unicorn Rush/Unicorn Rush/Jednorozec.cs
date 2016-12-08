@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Unicorn_Rush
 {
@@ -12,10 +13,12 @@ namespace Unicorn_Rush
 
         int predkosc = 0;
         int x;
+        int numerJednorozca;
 
-        public Jednorozec(int X)
+        public Jednorozec(int X, int NumerJednorozca)
         {
             this.x = X;
+            this.numerJednorozca = NumerJednorozca;
         }
 
         public void WylosujPredkosc()
@@ -37,6 +40,20 @@ namespace Unicorn_Rush
         public void UstawX(int X)
         {
             this.x = X;
+        }
+
+        public bool CzyJuzWygral()
+        {
+            if (this.x >= 615)
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public void Wygrana()
+        {
+            MessageBox.Show("Wygrał jednorożec numer " + this.numerJednorozca + "!");
         }
     }
 }
