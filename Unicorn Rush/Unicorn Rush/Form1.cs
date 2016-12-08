@@ -19,6 +19,7 @@ namespace Unicorn_Rush
         Zaklad[] zaklady;
 
         Jednorozec J1, J2, J3, J4;
+
         Jednorozec[] jednorozce;
 
         public Form1()
@@ -58,23 +59,28 @@ namespace Unicorn_Rush
             J4.UstawX(pictureBoxJednorozec4.Location.X);
             pictureBoxJednorozec4.Location = new Point(J4.PodajX() + J4.PodajPredkosc(), 305);
 
-            if (J1.PodajX() >= 469 || J2.PodajX() >= 469 || J3.PodajX() >= 469 || J4.PodajX() >= 469)
+            if (J1.PodajX() >= 615 | J2.PodajX() >= 615 | J3.PodajX() >= 615 | J4.PodajX() >= 615)
             {
                 timer1.Stop();
                 MessageBox.Show("Cośtam wygrało.");
-                for (int i = 0; i < jednorozce.Length; i++)
-                {
-                    jednorozce[i].UstawX(5);
-                }
-
-                pictureBoxJednorozec1.Location = new Point(J1.PodajX(), 5);
-                pictureBoxJednorozec2.Location = new Point(J2.PodajX(), 105);
-                pictureBoxJednorozec3.Location = new Point(J3.PodajX(), 205);
-                pictureBoxJednorozec4.Location = new Point(J4.PodajX(), 305);
-
-                buttonPodpiszZaklad.Enabled = true;
-                buttonStart.Enabled = true;
+                resetForm();
             }
+        }
+
+        private void resetForm()
+        {
+            for (int i = 0; i < jednorozce.Length; i++)
+            {
+                jednorozce[i].UstawX(5);
+            }
+
+            pictureBoxJednorozec1.Location = new Point(J1.PodajX(), 5);
+            pictureBoxJednorozec2.Location = new Point(J2.PodajX(), 105);
+            pictureBoxJednorozec3.Location = new Point(J3.PodajX(), 205);
+            pictureBoxJednorozec4.Location = new Point(J4.PodajX(), 305);
+
+            buttonPodpiszZaklad.Enabled = true;
+            buttonStart.Enabled = true;
         }
 
         private void buttonStart_Click(object sender, EventArgs e)

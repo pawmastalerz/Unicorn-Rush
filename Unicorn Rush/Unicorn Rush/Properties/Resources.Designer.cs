@@ -73,9 +73,59 @@ namespace Unicorn_Rush.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Jednorozec1 {
+            get {
+                object obj = ResourceManager.GetObject("Jednorozec1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Jednorozec2 {
+            get {
+                object obj = ResourceManager.GetObject("Jednorozec2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Jednorozec3 {
+            get {
+                object obj = ResourceManager.GetObject("Jednorozec3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Jednorozec4 {
+            get {
+                object obj = ResourceManager.GetObject("Jednorozec4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Tor {
             get {
                 object obj = ResourceManager.GetObject("Tor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TorTecza {
+            get {
+                object obj = ResourceManager.GetObject("TorTecza", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

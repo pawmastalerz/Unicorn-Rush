@@ -121,7 +121,22 @@
   <data name="Tor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Jednorozec1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jednorozec1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jednorozec2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jednorozec2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Jednorozec" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Jednorozec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jednorozec3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jednorozec3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TorTecza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TorTecza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jednorozec4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jednorozec4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
