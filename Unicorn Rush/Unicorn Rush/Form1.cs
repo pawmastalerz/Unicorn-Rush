@@ -23,7 +23,6 @@ namespace Unicorn_Rush
         Jednorozec J1, J2, J3, J4;
         Jednorozec[] jednorozce;
 
-
         Form2 Raport = new Form2();
 
         public Form1()
@@ -71,6 +70,7 @@ namespace Unicorn_Rush
                 timer1.Stop();
                 pula.ustawIndeksWygrywajacegoJednorozca(0);
                 J1.Wygrana();
+                generujRaport();
                 resetForm();
             }
             else if (J2.CzyJuzWygral() == true)
@@ -78,6 +78,7 @@ namespace Unicorn_Rush
                 timer1.Stop();
                 pula.ustawIndeksWygrywajacegoJednorozca(1);
                 J2.Wygrana();
+                generujRaport();
                 resetForm();
             }
             else if (J3.CzyJuzWygral() == true)
@@ -85,6 +86,7 @@ namespace Unicorn_Rush
                 timer1.Stop();
                 pula.ustawIndeksWygrywajacegoJednorozca(2);
                 J3.Wygrana();
+                generujRaport();
                 resetForm();
             }
             else if (J4.CzyJuzWygral() == true)
@@ -92,6 +94,7 @@ namespace Unicorn_Rush
                 timer1.Stop();
                 pula.ustawIndeksWygrywajacegoJednorozca(3);
                 J4.Wygrana();
+                generujRaport();
                 resetForm();
             }
         }
@@ -119,8 +122,26 @@ namespace Unicorn_Rush
             labelZbychuZaklad.Text = "Czekam na zakład Zbycha...";
             labelHelgaZaklad.Text = "Czekam na zakład Helgi...";
             labelEustachyZaklad.Text = "Czekam na zaklad Eustachego...";
-            
-            Raport.ShowDialog();
+        }
+
+        private void generujRaport()
+        {
+            for (int i = 0; i < zaklady.Length; i++)
+            {
+                if (zaklady[i].CzyZaglosowano() == false)
+                {
+                    Raport.DodajDoRaportu(zaklady[i].ImieGracza() + " w tej rundzie nie obstawia.");
+                }
+                else
+                {
+                    Raport.DodajDoRaportu(zaklady[i].ZawartyZaklad());
+                }
+            }
+
+            Raport.DodajDoRaportu("Wygrał jednorożec o numerze " +
+                    (pula.pokazIndeksWygrywajacegoJednorozca() + 1) + ".");
+
+            Raport.ShowDialog();          
         }
 
         private void buttonStart_Click(object sender, EventArgs e)

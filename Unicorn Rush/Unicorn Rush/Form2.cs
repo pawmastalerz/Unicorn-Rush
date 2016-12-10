@@ -12,13 +12,20 @@ namespace Unicorn_Rush
 {
     public partial class Form2 : Form
     {
+
         public Form2()
         {
             InitializeComponent();
         }
 
+        public void DodajDoRaportu(string Dane)
+        {
+            this.textBoxRaport.Text += (Dane + "\r\n");
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
+            textBoxRaport.Text = "";
             this.Close();
         }
     }
