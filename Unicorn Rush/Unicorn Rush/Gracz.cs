@@ -26,5 +26,10 @@ namespace Unicorn_Rush
         {
             return kasa;
         }
+
+        public void odejmijKase(int Kwota)
+        {
+            this.kasa -= Kwota;
+        }
     }
 }

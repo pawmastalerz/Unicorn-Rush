@@ -18,16 +18,17 @@ namespace Unicorn_Rush
         Zaklad ZZbychu, ZHelga, ZEustachy;
         Zaklad[] zaklady;
 
-        Jednorozec J1, J2, J3, J4;
+        Pula pula;
 
+        Jednorozec J1, J2, J3, J4;
         Jednorozec[] jednorozce;
 
         public Form1()
         {
             InitializeComponent();
 
-            Zbychu = new Gracz("Zbychu", 300);
-            Helga = new Gracz("Helga", 200);
+            Zbychu = new Gracz("Zbychu", 100);
+            Helga = new Gracz("Helga", 100);
             Eustachy = new Gracz("Eustachy", 100);
             gracze = new Gracz[3] { Zbychu, Helga, Eustachy };
 
@@ -36,16 +37,16 @@ namespace Unicorn_Rush
             ZEustachy = new Zaklad(Eustachy.ImieGracza(), Eustachy.KasaGracza());
             zaklady = new Zaklad[3] { ZZbychu, ZHelga, ZEustachy };
 
+            pula = new Pula();
+
             J1 = new Jednorozec(5, 1);
             J2 = new Jednorozec(105, 2);
             J3 = new Jednorozec(205, 3);
             J4 = new Jednorozec(305, 4);
             jednorozce = new Jednorozec[4] { J1, J2, J3, J4 };
-
-            int Pula = 0;
-
+            
             comboBoxGracz.SelectedIndex = 0;
-            labelPula.Text = Convert.ToString(Pula);
+            labelPula.Text = Convert.ToString(pula.StanPuli());
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -65,24 +66,28 @@ namespace Unicorn_Rush
             if (J1.CzyJuzWygral() == true)
             {
                 timer1.Stop();
+                pula.ustawIndeksWygrywajacegoJednorozca(0);
                 J1.Wygrana();
                 resetForm();
             }
             else if (J2.CzyJuzWygral() == true)
             {
                 timer1.Stop();
+                pula.ustawIndeksWygrywajacegoJednorozca(1);
                 J2.Wygrana();
                 resetForm();
             }
             else if (J3.CzyJuzWygral() == true)
             {
                 timer1.Stop();
+                pula.ustawIndeksWygrywajacegoJednorozca(2);
                 J3.Wygrana();
                 resetForm();
             }
             else if (J4.CzyJuzWygral() == true)
             {
                 timer1.Stop();
+                pula.ustawIndeksWygrywajacegoJednorozca(3);
                 J4.Wygrana();
                 resetForm();
             }
@@ -161,6 +166,24 @@ namespace Unicorn_Rush
                 Convert.ToInt16(numericUpDownJednorozecNumer.Value));
             zaklady[comboBoxGracz.SelectedIndex].UstawKwoteZakladu(
                 Convert.ToInt16(numericUpDownKwotaZakladu.Value));
+
+            gracze[comboBoxGracz.SelectedIndex].odejmijKase(
+                Convert.ToInt16(numericUpDownKwotaZakladu.Value));
+
+            pula.DodajDoPuli(Convert.ToInt16(
+                zaklady[comboBoxGracz.SelectedIndex].PodajKwoteZakladu()));
+            labelPula.Text = Convert.ToString(pula.StanPuli());
+
+            try
+            {
+                comboBoxGracz.SelectedIndex++;
+                comboBoxGracz.SelectedIndex--;
+            }
+            catch
+            {
+                comboBoxGracz.SelectedIndex--;
+                comboBoxGracz.SelectedIndex++;
+            }
         }
 
         private void comboBoxGracz_SelectedIndexChanged(object sender, EventArgs e)

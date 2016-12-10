@@ -10,7 +10,7 @@ namespace Unicorn_Rush
     class Zaklad : Gracz
     {
         int kwotaZakladu = 0;
-        int numerJednorozca = 0;
+        int numerJednorozca = 4;
         bool zaglosowano = false;
 
         public Zaklad(string Imie, int Kasa) : base(Imie, Kasa)
@@ -23,9 +23,19 @@ namespace Unicorn_Rush
             this.numerJednorozca = NumerJednorozca;
         }
 
+        public int PodajNumerJednorozca()
+        {
+            return this.numerJednorozca;
+        }
+
         public void UstawKwoteZakladu(int KwotaZakladu)
         {
             this.kwotaZakladu = KwotaZakladu;
+        }
+
+        public int PodajKwoteZakladu()
+        {
+            return this.kwotaZakladu;
         }
 
         public void Zaglosowano()
@@ -37,7 +47,7 @@ namespace Unicorn_Rush
         {
             this.zaglosowano = false;
             this.kwotaZakladu = 0;
-            this.numerJednorozca = 0;
+            this.numerJednorozca = 4;
         }
 
         public bool CzyZaglosowano()
