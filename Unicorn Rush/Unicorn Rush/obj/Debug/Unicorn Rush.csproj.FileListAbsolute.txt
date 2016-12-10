@@ -12,3 +12,4 @@ C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\bin\Debug
 C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\bin\Debug\Unicorn Rush.application
 C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn Rush.exe.manifest
 C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn Rush.application
+C:\Users\pawma\Documents\GitHub\Unicorn-Rush\Unicorn Rush\Unicorn Rush\obj\Debug\Unicorn_Rush.Form2.resources

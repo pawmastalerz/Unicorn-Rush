@@ -11,6 +11,11 @@ namespace Unicorn_Rush
         int kasa = 5;
         int indeksWygrywajacegoJednorozca = 0;
 
+        public int pokazIndeksWygrywajacegoJednorozca()
+        {
+            return indeksWygrywajacegoJednorozca;
+        }
+
         public void ustawIndeksWygrywajacegoJednorozca(int Numer)
         {
             this.indeksWygrywajacegoJednorozca = Numer;

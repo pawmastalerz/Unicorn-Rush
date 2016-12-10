@@ -23,6 +23,9 @@ namespace Unicorn_Rush
         Jednorozec J1, J2, J3, J4;
         Jednorozec[] jednorozce;
 
+
+        Form2 Raport = new Form2();
+
         public Form1()
         {
             InitializeComponent();
@@ -116,6 +119,8 @@ namespace Unicorn_Rush
             labelZbychuZaklad.Text = "Czekam na zakład Zbycha...";
             labelHelgaZaklad.Text = "Czekam na zakład Helgi...";
             labelEustachyZaklad.Text = "Czekam na zaklad Eustachego...";
+            
+            Raport.ShowDialog();
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -173,7 +178,7 @@ namespace Unicorn_Rush
             pula.DodajDoPuli(Convert.ToInt16(
                 zaklady[comboBoxGracz.SelectedIndex].PodajKwoteZakladu()));
             labelPula.Text = Convert.ToString(pula.StanPuli());
-
+            
             try
             {
                 comboBoxGracz.SelectedIndex++;
