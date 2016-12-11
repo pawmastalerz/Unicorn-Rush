@@ -283,7 +283,7 @@ namespace Unicorn_Rush
 
             for (int i = 0; i < gracze.Length; i++)
             {
-                if (gracze[i].KasaGracza() >= 105)
+                if (gracze[i].KasaGracza() >= 200)
                 {
                     Raport.DodajDoRaportu("\n");
                     decimal[] wyniki = new decimal[3];
