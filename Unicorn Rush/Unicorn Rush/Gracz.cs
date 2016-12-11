@@ -9,9 +9,9 @@ namespace Unicorn_Rush
     class Gracz
     {
         string imie;
-        int kasa;
+        decimal kasa;
 
-        public Gracz(string Imie, int Kasa)
+        public Gracz(string Imie, decimal Kasa)
         {
             this.imie = Imie;
             this.kasa = Kasa;
@@ -22,14 +22,24 @@ namespace Unicorn_Rush
             return this.imie;
         }
 
-        public int KasaGracza()
+        public decimal KasaGracza()
         {
             return kasa;
         }
 
-        public void odejmijKase(int Kwota)
+        public void OdejmijKase(decimal Kwota)
         {
             this.kasa -= Kwota;
+        }
+
+        public void DodajKase(decimal Kwota)
+        {
+            this.kasa += Kwota;
+        }
+
+        public void Resetuj()
+        {
+            this.kasa = 100;
         }
     }
 }

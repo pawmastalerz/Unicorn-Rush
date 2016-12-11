@@ -8,9 +8,10 @@ namespace Unicorn_Rush
 {
     class Pula
     {
-        int kasa = 5;
+        decimal kasa = 5;
         int indeksWygrywajacegoJednorozca = 4;
         public bool[] indeksGraczaWygrywajacego = new bool[3];
+        decimal kwotaKumulacji = 0;
 
         public int PokazIndeksWygrywajacegoJednorozca()
         {
@@ -32,19 +33,34 @@ namespace Unicorn_Rush
             return indeksGraczaWygrywajacego[Indeks];
         }
 
-        public int StanPuli()
+        public decimal StanPuli()
         {
             return kasa;
         }
 
-        public void DodajDoPuli(int Kwota)
+        public void DodajDoPuli(decimal Kwota)
         {
             this.kasa += Kwota;
         }
 
+        public void Kumulacja(decimal Kwota)
+        {
+            this.kwotaKumulacji = Kwota;
+        }
+
+        public decimal KwotaKumulacji()
+        {
+            return this.kwotaKumulacji;
+        }
+
+        public void ResetujKumulacje()
+        {
+            this.kwotaKumulacji = 0;
+        }
+
         public void ResetujPule()
         {
-            this.kasa = 5;
+            this.kasa = kwotaKumulacji + 5;
             this.indeksWygrywajacegoJednorozca = 4;
             for (int i = 0; i < indeksGraczaWygrywajacego.Length; i++)
             {

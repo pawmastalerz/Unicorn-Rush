@@ -9,11 +9,11 @@ namespace Unicorn_Rush
 {
     class Zaklad : Gracz
     {
-        int kwotaZakladu = 0;
+        decimal kwotaZakladu = 0;
         int numerJednorozca = 4;
         bool zaglosowano = false;
 
-        public Zaklad(string Imie, int Kasa) : base(Imie, Kasa)
+        public Zaklad(string Imie, decimal Kasa) : base(Imie, Kasa)
         {
 
         }
@@ -28,12 +28,12 @@ namespace Unicorn_Rush
             return this.numerJednorozca;
         }
 
-        public void UstawKwoteZakladu(int KwotaZakladu)
+        public void UstawKwoteZakladu(decimal KwotaZakladu)
         {
             this.kwotaZakladu = KwotaZakladu;
         }
 
-        public int PodajKwoteZakladu()
+        public decimal PodajKwoteZakladu()
         {
             return this.kwotaZakladu;
         }

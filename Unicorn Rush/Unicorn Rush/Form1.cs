@@ -29,9 +29,9 @@ namespace Unicorn_Rush
         {
             InitializeComponent();
 
-            Zbychu = new Gracz("Zbychu", 10);
-            Helga = new Gracz("Helga", 10);
-            Eustachy = new Gracz("Eustachy", 10);
+            Zbychu = new Gracz("Zbychu", 100);
+            Helga = new Gracz("Helga", 100);
+            Eustachy = new Gracz("Eustachy", 100);
             gracze = new Gracz[3] { Zbychu, Helga, Eustachy };
 
             ZZbychu = new Zaklad(Zbychu.ImieGracza(), Zbychu.KasaGracza());
@@ -50,20 +50,18 @@ namespace Unicorn_Rush
             comboBoxGracz.SelectedIndex = 0;
             labelPula.Text = Convert.ToString(pula.StanPuli());
 
-            foreach (var item in pula.indeksGraczaWygrywajacego)
-            {
-                Console.WriteLine(item);
-            }
+            pula.ResetujPule();
         }
 
         private void buttonZasady_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                "W grze mamy trzech graczy: Zbycha, Helgę i Eustachego. " +
-                "Każdy z nich próbuje zgadnąć który z jednorożców dobiegnie do mety jako pierwszy.\n" +
+                "W grze mamy trzech graczy: Zbycha, Helgę i Eustachego.\n" +
+                "Każdy z nich próbuje zgadnąć, który z jednorożców dobiegnie do mety jako pierwszy.\n" +
                 "Na każdego jednorożca można obstawić kwotę od 5 do 40 PLN. " +
                 "Można też nie obstawiać w ogóle.\n" +
-                "Wszyscy gracze zaczynąją z kwotą 100 PLN. Wygrywa ten gracz, który podwoi swoją gotówkę.",
+                "Wszyscy gracze zaczynąją z kwotą 100 PLN.\nZ każdą rundą do puli dokładane jest 5 PLN.\n" +
+                "Wygrywa ten gracz, który podwoi swoją gotówkę!\n",
                 "Zasady gry");
         }
 
@@ -116,6 +114,24 @@ namespace Unicorn_Rush
             szczescieGraczy();
             generujRaport();
             resetForm();
+
+            int graczeSplukani = 0;
+            for (int i = 0; i < gracze.Length; i++)
+            {
+                if (gracze[i].KasaGracza() == 0) graczeSplukani++;
+            }
+            if (graczeSplukani == 3)
+            {
+                if (MessageBox.Show("Nikt już nie ma pieniędzy. Bank wygrywa!\nCzy grać jeszcze raz?", "Ups!",
+                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    resetujGre();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
         }
 
         private void szczescieGraczy()
@@ -143,6 +159,7 @@ namespace Unicorn_Rush
 
             buttonPodpiszZaklad.Enabled = true;
             buttonStart.Enabled = true;
+            buttonZasady.Enabled = true;
 
             for (int i = 0; i < zaklady.Length; i++)
             {
@@ -155,6 +172,8 @@ namespace Unicorn_Rush
             labelZbychuZaklad.Text = "Czekam na zakład Zbycha...";
             labelHelgaZaklad.Text = "Czekam na zakład Helgi...";
             labelEustachyZaklad.Text = "Czekam na zaklad Eustachego...";
+
+            label1.Text = "ma aktualnie " + gracze[comboBoxGracz.SelectedIndex].KasaGracza() + " PLN";
         }
 
         private void generujRaport()
@@ -167,12 +186,15 @@ namespace Unicorn_Rush
                 }
                 else
                 {
-                    Raport.DodajDoRaportu(zaklady[i].ZawartyZaklad());
+                    Raport.DodajDoRaportu(gracze[i].ImieGracza() + " ma " + (gracze[i].KasaGracza() + zaklady[i].PodajKwoteZakladu()) +
+                        " PLN. Obstawia " + zaklady[i].PodajKwoteZakladu() + " PLN na jednorożca o numerze " +
+                        zaklady[i].PodajNumerJednorozca() + ".");
                 }
             }
+            Raport.DodajDoRaportu("\n");
 
             Raport.DodajDoRaportu("Wygrał jednorożec o numerze " +
-                    (pula.PokazIndeksWygrywajacegoJednorozca() + 1) + ".");
+                    (pula.PokazIndeksWygrywajacegoJednorozca() + 1) + ".\r\n");
 
             for (int i = 0; i < gracze.Length; i++)
             {
@@ -185,14 +207,123 @@ namespace Unicorn_Rush
                     Raport.DodajDoRaportu(gracze[i].ImieGracza() + " tym razem nie wygrywa...");
                 }
             }
+            Raport.DodajDoRaportu("\n");
 
-            Raport.ShowDialog();          
+            Raport.DodajDoRaportu("Aktualny stan puli to " + pula.StanPuli() + " PLN.\r\n");
+
+            analizujWynik();
+
+            Raport.ShowDialog();
+        }
+
+        private void analizujWynik()
+        {
+            int sumaWygrywajacych = 0;
+            decimal doRozdania = 0;
+            for (int i = 0; i < gracze.Length; i++)
+            {
+                if (pula.PokazSzczescieGracza(i) == true)
+                {
+                    sumaWygrywajacych++;
+                }
+            }
+
+            if (sumaWygrywajacych == 0)
+            {
+                Raport.DodajDoRaportu("Nikt nie wygrywa. Kumulacja! W puli obecnie " + (pula.StanPuli() + 5) + " PLN.");
+                pula.Kumulacja(pula.StanPuli());
+            }
+
+            else if (sumaWygrywajacych == 1)
+            {
+                Raport.DodajDoRaportu("Wygrywa tylko jeden gracz.\r\n");
+                for (int i = 0; i < gracze.Length; i++)
+                {
+                    if (pula.PokazSzczescieGracza(i) == true)
+                    {
+                        gracze[i].DodajKase(pula.StanPuli());
+                        Raport.DodajDoRaportu(gracze[i].ImieGracza() + " zgarnia z puli " + pula.StanPuli() + " PLN!" +
+                            " i ma obecnie " + gracze[i].KasaGracza() + " PLN.");
+                    }
+                    pula.ResetujKumulacje();
+                }
+            }
+
+            else if (sumaWygrywajacych == 2)
+            {
+                Raport.DodajDoRaportu("Wygrywają dwaj gracze.\r\n");
+                doRozdania = Decimal.Round((pula.StanPuli() / 2), 2);
+                for (int i = 0; i < gracze.Length; i++)
+                {
+                    if (pula.PokazSzczescieGracza(i) == true)
+                    {
+                        gracze[i].DodajKase(doRozdania);
+                        Raport.DodajDoRaportu(gracze[i].ImieGracza() + " zgarnia z puli " + doRozdania + " PLN" +
+                            " i ma obecnie " + gracze[i].KasaGracza() + " PLN.");
+                    }
+                    pula.ResetujKumulacje();
+                }
+            }
+
+            else if (sumaWygrywajacych == 3)
+            {
+                Raport.DodajDoRaportu("Wszyscy wygrywają!\r\n");
+                doRozdania = Decimal.Round((pula.StanPuli() / 3), 2);
+                for (int i = 0; i < gracze.Length; i++)
+                {
+                    if (pula.PokazSzczescieGracza(i) == true)
+                    {
+                        gracze[i].DodajKase(doRozdania);
+                        Raport.DodajDoRaportu(gracze[i].ImieGracza() + " zgarnia z puli " + doRozdania + " PLN" +
+                            " i ma obecnie " + gracze[i].KasaGracza() + " PLN.");
+                    }
+                    pula.ResetujKumulacje();
+                }
+            }
+
+            for (int i = 0; i < gracze.Length; i++)
+            {
+                if (gracze[i].KasaGracza() >= 105)
+                {
+                    Raport.DodajDoRaportu("\n");
+                    decimal[] wyniki = new decimal[3];
+                    for (int j = 0; j < wyniki.Length; j++)
+                    {
+                        wyniki[j] = gracze[j].KasaGracza();
+                    }
+                    int zwyciezca = Array.IndexOf(wyniki, wyniki.Max());
+                    Raport.DodajDoRaportu(gracze[zwyciezca].ImieGracza() + " wygrywa grę!");
+
+                    if (MessageBox.Show(gracze[zwyciezca].ImieGracza() + " wygrywa!\n\nCzy grać jeszcze raz?", "Gratulacje!",
+                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        resetujGre();
+                    }
+                    else
+                    {
+                        Application.Exit();
+                    }
+                }
+            }
+        }
+
+        private void resetujGre()
+        {
+            for (int i = 0; i < gracze.Length; i++)
+            {
+                gracze[i].Resetuj();
+                pula.ResetujPule();
+                pula.ResetujKumulacje();
+                resetForm();
+            }
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            Raport.ResetujRaport();
             buttonPodpiszZaklad.Enabled = false;
             buttonStart.Enabled = false;
+            buttonZasady.Enabled = false;
             timer1.Enabled = true;
         }
 
@@ -246,23 +377,14 @@ namespace Unicorn_Rush
             zaklady[comboBoxGracz.SelectedIndex].UstawKwoteZakladu(
                 Convert.ToInt16(numericUpDownKwotaZakladu.Value));
 
-            gracze[comboBoxGracz.SelectedIndex].odejmijKase(
+            gracze[comboBoxGracz.SelectedIndex].OdejmijKase(
                 Convert.ToInt16(numericUpDownKwotaZakladu.Value));
 
             pula.DodajDoPuli(Convert.ToInt16(
                 zaklady[comboBoxGracz.SelectedIndex].PodajKwoteZakladu()));
             labelPula.Text = Convert.ToString(pula.StanPuli());
-            
-            try
-            {
-                comboBoxGracz.SelectedIndex++;
-                comboBoxGracz.SelectedIndex--;
-            }
-            catch
-            {
-                comboBoxGracz.SelectedIndex--;
-                comboBoxGracz.SelectedIndex++;
-            }
+
+            label1.Text = "ma aktualnie " + gracze[comboBoxGracz.SelectedIndex].KasaGracza() + " PLN";
         }
 
         private void comboBoxGracz_SelectedIndexChanged(object sender, EventArgs e)

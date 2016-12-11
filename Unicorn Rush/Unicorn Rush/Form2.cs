@@ -23,9 +23,13 @@ namespace Unicorn_Rush
             this.textBoxRaport.Text += (Dane + "\r\n");
         }
 
+        public void ResetujRaport()
+        {
+            this.textBoxRaport.Text = "";
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            textBoxRaport.Text = "";
             this.Close();
         }
     }
