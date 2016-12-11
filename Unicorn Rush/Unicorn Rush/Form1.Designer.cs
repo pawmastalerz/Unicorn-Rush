@@ -53,6 +53,7 @@
             this.pictureBoxJednorozec2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxJednorozec311 = new System.Windows.Forms.PictureBox();
             this.pictureBoxJednorozec4 = new System.Windows.Forms.PictureBox();
+            this.buttonZasady = new System.Windows.Forms.Button();
             this.groupBoxZawarteZaklady.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKwotaZakladu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJednorozecNumer)).BeginInit();
@@ -70,7 +71,7 @@
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonStart.Location = new System.Drawing.Point(672, 423);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(140, 142);
+            this.buttonStart.Size = new System.Drawing.Size(140, 113);
             this.buttonStart.TabIndex = 2;
             this.buttonStart.Text = "Start!";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -338,11 +339,22 @@
             this.pictureBoxJednorozec4.TabIndex = 6;
             this.pictureBoxJednorozec4.TabStop = false;
             // 
+            // buttonZasady
+            // 
+            this.buttonZasady.Location = new System.Drawing.Point(672, 542);
+            this.buttonZasady.Name = "buttonZasady";
+            this.buttonZasady.Size = new System.Drawing.Size(140, 23);
+            this.buttonZasady.TabIndex = 22;
+            this.buttonZasady.Text = "Zasady gry";
+            this.buttonZasady.UseVisualStyleBackColor = true;
+            this.buttonZasady.Click += new System.EventHandler(this.buttonZasady_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 573);
+            this.ClientSize = new System.Drawing.Size(822, 575);
+            this.Controls.Add(this.buttonZasady);
             this.Controls.Add(this.groupBoxAktualnyZaklad);
             this.Controls.Add(this.groupBoxZawarteZaklady);
             this.Controls.Add(this.buttonPodpiszZaklad);
@@ -393,6 +405,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelPula;
+        private System.Windows.Forms.Button buttonZasady;
     }
 }
 

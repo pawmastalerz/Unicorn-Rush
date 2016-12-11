@@ -29,9 +29,9 @@ namespace Unicorn_Rush
         {
             InitializeComponent();
 
-            Zbychu = new Gracz("Zbychu", 100);
-            Helga = new Gracz("Helga", 100);
-            Eustachy = new Gracz("Eustachy", 100);
+            Zbychu = new Gracz("Zbychu", 10);
+            Helga = new Gracz("Helga", 10);
+            Eustachy = new Gracz("Eustachy", 10);
             gracze = new Gracz[3] { Zbychu, Helga, Eustachy };
 
             ZZbychu = new Zaklad(Zbychu.ImieGracza(), Zbychu.KasaGracza());
@@ -49,6 +49,22 @@ namespace Unicorn_Rush
             
             comboBoxGracz.SelectedIndex = 0;
             labelPula.Text = Convert.ToString(pula.StanPuli());
+
+            foreach (var item in pula.indeksGraczaWygrywajacego)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private void buttonZasady_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "W grze mamy trzech graczy: Zbycha, Helgę i Eustachego. " +
+                "Każdy z nich próbuje zgadnąć który z jednorożców dobiegnie do mety jako pierwszy.\n" +
+                "Na każdego jednorożca można obstawić kwotę od 5 do 40 PLN. " +
+                "Można też nie obstawiać w ogóle.\n" +
+                "Wszyscy gracze zaczynąją z kwotą 100 PLN. Wygrywa ten gracz, który podwoi swoją gotówkę.",
+                "Zasady gry");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -68,34 +84,48 @@ namespace Unicorn_Rush
             if (J1.CzyJuzWygral() == true)
             {
                 timer1.Stop();
-                pula.ustawIndeksWygrywajacegoJednorozca(0);
+                pula.UstawIndeksWygrywajacegoJednorozca(0);
                 J1.Wygrana();
-                generujRaport();
-                resetForm();
+                zakonczTure();
             }
             else if (J2.CzyJuzWygral() == true)
             {
                 timer1.Stop();
-                pula.ustawIndeksWygrywajacegoJednorozca(1);
+                pula.UstawIndeksWygrywajacegoJednorozca(1);
                 J2.Wygrana();
-                generujRaport();
-                resetForm();
+                zakonczTure();
             }
             else if (J3.CzyJuzWygral() == true)
             {
                 timer1.Stop();
-                pula.ustawIndeksWygrywajacegoJednorozca(2);
+                pula.UstawIndeksWygrywajacegoJednorozca(2);
                 J3.Wygrana();
-                generujRaport();
-                resetForm();
+                zakonczTure();
             }
             else if (J4.CzyJuzWygral() == true)
             {
                 timer1.Stop();
-                pula.ustawIndeksWygrywajacegoJednorozca(3);
+                pula.UstawIndeksWygrywajacegoJednorozca(3);
                 J4.Wygrana();
-                generujRaport();
-                resetForm();
+                zakonczTure();
+            }
+        }
+
+        private void zakonczTure()
+        {
+            szczescieGraczy();
+            generujRaport();
+            resetForm();
+        }
+
+        private void szczescieGraczy()
+        {
+            for (int i = 0; i < gracze.Length; i++)
+            {
+                if ((zaklady[i].PodajNumerJednorozca() - 1) == pula.PokazIndeksWygrywajacegoJednorozca())
+                {
+                    pula.UstawSzczesliwegoGracza(i);
+                }                    
             }
         }
 
@@ -119,6 +149,9 @@ namespace Unicorn_Rush
                 zaklady[i].ResetujZaglosowanie();
             }
 
+            pula.ResetujPule();
+            labelPula.Text = Convert.ToString(pula.StanPuli());
+
             labelZbychuZaklad.Text = "Czekam na zakład Zbycha...";
             labelHelgaZaklad.Text = "Czekam na zakład Helgi...";
             labelEustachyZaklad.Text = "Czekam na zaklad Eustachego...";
@@ -139,7 +172,19 @@ namespace Unicorn_Rush
             }
 
             Raport.DodajDoRaportu("Wygrał jednorożec o numerze " +
-                    (pula.pokazIndeksWygrywajacegoJednorozca() + 1) + ".");
+                    (pula.PokazIndeksWygrywajacegoJednorozca() + 1) + ".");
+
+            for (int i = 0; i < gracze.Length; i++)
+            {
+                if (pula.PokazSzczescieGracza(i) == true)
+                {
+                    Raport.DodajDoRaportu(gracze[i].ImieGracza() + " obstawia poprawnie!");
+                }
+                else
+                {
+                    Raport.DodajDoRaportu(gracze[i].ImieGracza() + " tym razem nie wygrywa...");
+                }
+            }
 
             Raport.ShowDialog();          
         }
@@ -166,7 +211,15 @@ namespace Unicorn_Rush
                 MessageBox.Show("Eustachy już obstawił!", "Niestety...");
             }
 
-            if ((comboBoxGracz.SelectedIndex == 0) && (zaklady[0].CzyZaglosowano() == false))
+            else if (
+                (gracze[comboBoxGracz.SelectedIndex].KasaGracza() -
+                numericUpDownKwotaZakladu.Value) < 0)
+            {
+                MessageBox.Show(Convert.ToString(comboBoxGracz.SelectedItem) + " nie ma tyle pieniędzy!",
+                    "Niestety...");
+            }
+
+            else if ((comboBoxGracz.SelectedIndex == 0) && (zaklady[0].CzyZaglosowano() == false))
             {
                 ustawZaklad();
                 labelZbychuZaklad.Text = zaklady[0].ZawartyZaklad();

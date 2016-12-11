@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Unicorn Rush.exe" size="154096">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Unicorn Rush.exe" size="156144">
       <assemblyIdentity name="Unicorn Rush" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AsHXDzWBF4VxvYT7IfGW4TzjVCxcMGEylFChz+7Ys7c=</dsig:DigestValue>
+        <dsig:DigestValue>G15xl1QbHcgW7IwTcUQCU7TdT+kz0hW5DWTOQ251ZRk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
